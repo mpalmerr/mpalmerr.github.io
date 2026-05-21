@@ -1,144 +1,120 @@
-/* GENERAL PAGE STYLE */
-
-* {
-    box-sizing: border-box;
-}
-
+/* BASE */
 body {
+    font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
     margin: 0;
-    background-color: #f7f7f7;
-    color: #2b2b2b;
-    font-family: "Courier New", Courier, monospace;
+    color: #222;
+    background-color: #f4f4f4;
     line-height: 1.6;
 }
 
-/* MAIN LAYOUT */
-
+/* LAYOUT */
 .layout {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
-    padding: 70px 45px;
-    gap: 60px;
-    align-items: flex-start;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 40px;
 }
 
-/* LEFT SIDEBAR / CARD */
-
+/* LEFT COLUMN */
 .sidebar {
-    width: 320px;
-    flex-shrink: 0;
-    background-color: #eeeeee;
-    border-radius: 8px;
-    padding: 45px 35px 40px 35px;
+    width: 280px;
     text-align: center;
+    background-color: #eee;
+    padding: 30px 20px;
+    border-radius: 8px;
 }
 
+/* PROFILE IMAGE */
 .profile {
-    width: 185px;
-    height: 185px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 55px auto;
+    margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 30px;
-    line-height: 1.2;
-    margin: 0 0 24px 0;
-    font-weight: 700;
+/* NAME */
+.sidebar h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
+/* ROLE TEXT */
 .role {
-    font-size: 16px;
-    color: #666666;
-    margin: 0 0 32px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 6px 8px;
+    color: #2a7ae2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
 }
 
 /* ICON LINKS */
-
 .icon-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    margin-top: 28px;
+    gap: 18px;
 }
 
 .icon-links a {
-    color: #1a73e8;
-    text-decoration: none;
+    margin: 6px 0;
     font-size: 15px;
     line-height: 1;
-    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .icon-links a:hover {
-    opacity: 0.65;
-    transform: translateY(-1px);
+    text-decoration: none;
+    opacity: 0.7;
 }
 
-.cv-link {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-/* RIGHT CONTENT */
-
+/* RIGHT COLUMN */
 .content {
     flex: 1;
-    max-width: 760px;
-    padding-top: 20px;
+    max-width: 650px;
 }
 
-h2 {
-    font-size: 26px;
-    line-height: 1.2;
-    margin: 0 0 22px 0;
-    font-weight: 700;
+/* TEXT */
+.content p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* SECTION TITLES */
+.content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
     text-decoration: underline;
 }
 
-p {
-    font-size: 18px;
-    margin: 0 0 34px 0;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 850px) {
+/* MOBILE */
+@media (max-width: 700px) {
     .layout {
         flex-direction: column;
-        padding: 40px 24px;
-        gap: 40px;
+        align-items: center;
     }
 
     .sidebar {
         width: 100%;
     }
 
-    .profile {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 35px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .role {
-        font-size: 15px;
+    .content {
+        max-width: 100%;
     }
 }
